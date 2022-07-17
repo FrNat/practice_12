@@ -129,14 +129,12 @@ function getGenderDescription ($example_persons_array) {
     $male = round($countMale/$persons_array_lenght*100, 1, PHP_ROUND_HALF_UP);
     $female = round($countFemale/$persons_array_lenght*100, 1, PHP_ROUND_HALF_UP);
     $notfound = 100-($male+$female);
-    $genderMessage = <<<TEXT
+    $genderMessage = "
     Мужчины - $male %
     Женщины - $female %
-    Не выявлено - $notfound %
-    TEXT;
+    Не выявлено - $notfound %";
     return $genderMessage;
 }
-
 
 //подбор идеальной пары
 function getPerfectPartner ($surname, $name, $patrname, $example_persons_array) {
@@ -159,17 +157,14 @@ function getPerfectPartner ($surname, $name, $patrname, $example_persons_array) 
         $person2ShortName = getShortName($person2String);
         $randomInt = round(random_int(5000, 10000)/100, 2, PHP_ROUND_HALF_UP);
     
-        $compatibilityMessage = <<<TEXT
+        $compatibilityMessage = "
         $person1ShortName и $person2ShortName =
-        &#128151 Идеально на $randomInt % &#128151 
-        TEXT;
+        &#128151 Идеально на $randomInt % &#128151";
         }
     else {
-        $compatibilityMessage = <<<TEXT
+        $compatibilityMessage = "
         Повторите поиск! &#127801 
-        Пара не найдена...
-        TEXT;
+        Пара не найдена...";
         }
     return $compatibilityMessage;
 }
-?>
